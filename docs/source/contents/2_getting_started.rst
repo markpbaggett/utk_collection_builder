@@ -95,4 +95,77 @@ Reviewing the CollectionBuilder Demo Site
 Assuming you have a green check mark, you can click the link to your site to visit it. You should see a page with the
 standard demo CollectionBuilder content.  If you don't see that, let me know in the chat.
 
+=========
+Home Page
+=========
 
+The home page is the first page that people will see when they visit your site. This page provides an overview of what
+is found in your collection
+
+This includes:
+
+1. a brief description that can point to your about page with more information.
+2. the time span for the collection.
+3. the top subjects and locations found in the collection.
+4. an overview of the types of objects found within the collection.
+5. a nice carousel of images from the collection.
+
+===========
+Browse Page
+===========
+
+The browse page includes links to all the items in the collection.  Most other pages will leverage data from this section
+and / or refer people back to these pages.
+
+=========
+Item Page
+=========
+
+The item page is the page that is created for each item in the collection.  This page includes the metadata you provide
+about each work. It also provides links to features you can use to visualize each work.
+
+========
+Subjects
+========
+
+Subjects are a word cloud that include the most popular data found within the collection. If you click one of these, it
+refers you back to browse with only the matching objects in the results.
+
+=========
+Locations
+=========
+
+Locations like subjects are a word cloud that include the most popular data found within the collection. If you click
+one of these, it refers you back to browse with only the matching objects in the results.
+
+===
+Map
+===
+
+The map feature gives you a map cluster of the works in the collection. Clicking a cluster will link you to all the objects
+that are geospatially related to the cluster.
+
+========
+Timeline
+========
+
+The timeline let's you chronologically explore all the works in the collection.
+
+====
+Data
+====
+
+The data page provides a table based browse of all the metadata in the collection. It also provides lists of data in popular
+formats to help others easily reuse your data for other sites or research.
+
+This data feature is also found on the front page of each site.
+
+=====
+About
+=====
+
+Finally, we have the about page.  This page is fully customizeable and allows you to provide more information about your
+collections and the works found within it.
+
+One of the major features of CollectionBuilder is providing an easy way to edit your about pages and reuse the objects related
+to each work without the need for code, so we'll do that a little more as we more forward.

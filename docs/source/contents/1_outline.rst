@@ -147,6 +147,8 @@ CollectionBuilder works with 3 main pieces:
 Using these three pieces, CollectionBuilder will generate a static website that you can host on GitHub pages that drives
 visualizations including browse, subject clouds, maps timelines and tables.
 
+Before we review this, let's start by getting a CollectionBuilder site up and running.
+
 CollectionBuilder Documentation
 -------------------------------
 
