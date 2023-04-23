@@ -4,7 +4,7 @@ Introduction to Collection Builder
 What is CollectionBuilder?
 --------------------------
 
-`CollectionBuilder <https://collectionbuilder.github.io/>`_ is an n open source framework for creating digital collection
+`CollectionBuilder <https://collectionbuilder.github.io/>`_ is an open source framework for creating digital collection
 and exhibit websites that are driven by metadata and powered by modern static web technology. This allows you to create
 a collection and host it on lightweight infrastructure, without the need for a database or server-side scripting language.
 
@@ -134,6 +134,18 @@ This transformational ability allows project/collection data:
 * to be preserved in open, reusable formats going forward;
 * and to enable certain machine learning and indexing functions,
 * such as providing structured data in the “<head>” of html files to allow for better discovery via Google and other search engines.)
+
+How CollectionBuilder Works
+---------------------------
+
+CollectionBuilder works with 3 main pieces:
+
+1.A CollectionBuilder template: a GitHub repository that you customize with your content
+2. Metadata: A GoogleSheet that describes the objects in your collection
+3. A folder of data: image files, PDFs, mp3s, links to youtube videos
+
+Using these three pieces, CollectionBuilder will generate a static website that you can host on GitHub pages that drives
+visualizations including browse, subject clouds, maps timelines and tables.
 
 CollectionBuilder Documentation
 -------------------------------
