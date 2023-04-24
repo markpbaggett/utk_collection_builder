@@ -1,5 +1,12 @@
-Getting Started
-===============
+Getting Started: Deploying a CollectionBuilder-GH Site
+======================================================
+
+Outcomes
+--------
+
+* Create a new collection using CollectionBuilder-GH
+* Configure GitHub Pages to serve your collection
+* Understand the various visualizations that CollectionBuilder provides
 
 Overview of GitHub and GitHub Pages
 -----------------------------------
