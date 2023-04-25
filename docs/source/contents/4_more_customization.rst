@@ -1,6 +1,11 @@
 Additional Customization Options
 ================================
 
+Outcomes:
+---------
+
+* Understand how advanced customization of CollectionBuilder Components work
+
 Adding Missing Metadata Fields
 ------------------------------
 
