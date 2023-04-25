@@ -77,3 +77,57 @@ We can add our donor information here as well in the same way:
     subject,Subjects,true
     location,Location,true
     utk_donor,Donor,true
+
+Expanding Data in the Data Table
+--------------------------------
+
+Let's modify the data in our data table to include the :code:`location` field like so:
+
+..code:: csv
+
+    field,display_name
+    title,Title
+    date,Date
+    description,Description
+    subject,Subjects
+    location,Locations
+
+Expanding Fields that are Available in Our Search Index
+-------------------------------------------------------
+
+By default, not all metadata fields are available in our search index.  We can add them by modifying :code:`_data/config-search.csv`.
+
+Here, we can add fields and set if they are in our search index and if they appear in our search results if we match on
+that term.  Let's add :code:`utk_donor` to our search index but not display it in our search results:
+
+.. code:: csv
+
+    field,index,display
+    title,true,true
+    date,true,true
+    creator,true,false
+    description,true,true
+    subject,true,true
+    location,true,false
+    utk_donor,true,false
+
+Modifying Nav
+-------------
+
+We can modify the navigation bar by modifying :code:`_data/config-nav.csv`.
+
+Here, we can set the order of the navigation bar and the text that appears in the navigation bar. We can also removed
+unwanted or unused components.
+
+For now, let's remove the "Timeline" component since our timeline data isn't great.
+
+.. code:: csv
+
+    display_name,stub,dropdown_parent
+    Home,/
+    Browse,/browse.html
+    Subjects,/subjects.html
+    Locations,/locations.html
+    Map,/map.html
+    Data,/data.html
+    About,/about.html
