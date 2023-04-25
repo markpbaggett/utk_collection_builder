@@ -25,5 +25,7 @@ Outline of Today's Workshop
 
 * Introduction to Collection Builder and CollectionBuilder Docs (1:05 -1:15)
 * Starting a new CollectionBuilder site (1:15 - 1:25)
-* Remediating Metadata (1:25 - 1:35)
-* Gathering Content (1:35 - 1:45)
+* Adding Initial Content (1:25 - 1:35)
+* Modifying Content (1:35 - 1:55)
+* Customizing Components and Adding Aboutness (1:55 - 2:15)
+* Questions / Wrapup (2:15 - 2:30)
