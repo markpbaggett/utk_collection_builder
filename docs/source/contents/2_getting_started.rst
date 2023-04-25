@@ -41,6 +41,10 @@ Before we move forward, I'll just do a quick overview of the GitHub interface.
 
 That's probably enough for now, but we'll talk more about GitHub and GitHub Pages as we move forward.
 
+.. image:: ../images/cb_github.png
+   :width: 100%
+   :alt: GitHub Interface
+
 Creating a New Collection
 -------------------------
 
@@ -49,7 +53,7 @@ new repository in your GitHub account that is a copy of the CollectionBuilder-GH
 in to Github at this point.
 
 You can name the repository anything you want, but it's probably best to name it something that is related to your
-collection.  For example, you might name this "utk_collectionbuilder_workshop." One thing to keep in mind is that whatever
+collection.  For example, you might name this :code:`utk_collectionbuilder_workshop`. One thing to keep in mind is that whatever
 you name your repository will be used by GitHub to create the URL for your collection, so make sure you choose a name that
 you're happy with when you're doing this in the future. Also, case matters, so I recommend to always use lowercase letters
 here.
@@ -65,6 +69,10 @@ Finally, there is a checkbox for "Include all branches." We don't need to check 
 
 Once you've filled out the form, click the green "Create repository from template" button.  This will create a new repository
 in the account you chose above.
+
+.. image:: ../images/using_template.png
+   :width: 100%
+   :alt: Create a New Repository
 
 Getting Your New Collection to the Web
 --------------------------------------
@@ -82,6 +90,10 @@ looking for the **Pages** section. Once you find it, click it.
 Under the Pages section, we can see that GitHub Pages is currently disabled.  We can enable it by clicking the "Select branch"
 dropdown and selecting the main branch.  Leave the next dropdown as :code:`/(root)`. Once you've done that, click the
 "Save" button.
+
+.. image:: ../images/pages_config.png
+   :width: 100%
+   :alt: Enable GitHub Pages
 
 Once you've done that, you'll see a message that says "Your site is ready to be published at ...". Copy that link and
 let's return to the main page for the repository. We're going to save that link here so its easy to remember where to find
