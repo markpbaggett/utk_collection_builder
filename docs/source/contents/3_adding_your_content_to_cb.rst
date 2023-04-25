@@ -36,7 +36,7 @@ Adding Sample Objects to Our GitHub Repository
 ----------------------------------------------
 
 To save time, I've pulled together some sample objects to use in our demo collection. You can download the zip file
-`here <>`_.
+`here <https://drive.google.com/file/d/1nAsc76GSBSdyjW_d77b2lVOzgd8qLLwm/view?usp=sharing>`_.
 
 Now, we're going to extract this zip file and add the contents to our GitHub repository.
 
@@ -49,10 +49,14 @@ you can add the files you want to host in your project if you are not using exte
 Now, in our GitHub repository, we're going to click **Add File** and select **Upload Files**. Now drag each of the files
 you just extracted to your repository.
 
+.. image:: ../images/add-files.png
+   :width: 600px
+   :alt: Add Files
+
 You may notice that there are a few demo files, but let's leave them there for now. They won't show up in our collection
 unless we add them to our metadata.
 
-Finally, ccroll down to the “Commit changes” box, write a short commit message in the form (an appropriate message might
+Finally, scroll down to the “Commit changes” box, write a short commit message in the form (an appropriate message might
 be “add collection objects to project”), then click the green “Commit changes” button to add them to your repository.
 
 Adding Metadata about Our Objects
