@@ -346,3 +346,71 @@ Let's open :code:`_data/theme.yml` and add :code:`utk_donor` to our subjects clo
     subjects-fields: subject;creator;utk_donor # set the field to be featured in the cloud (if left blank, none will be generated)
     subjects-min: 1 # min size for subject cloud, too many terms = slow load time!
     subjects-stopwords: # boxers;boxing;boxer # set of subjects separated by ;, e.g. boxers;boxing
+
+Notice you can also change the minimum size of the words in the cloud and add stopwords, or words that you don't want to appear in the cloud.
+
+====================================
+Configuring Other Parts of theme.yml
+====================================
+
+Before we move and fix anything else, let's look at :code:`theme.yml` a little closer and modify some settings there.
+
+Under :code:`Home page`, we can set our featured image that will be used across our collection.
+
+Let's set that to :code:`wcc:313` or another :code:`objectid` in our collection.
+
+.. code:: yaml
+
+    ##########
+    # HOME PAGE
+    #
+    # featured image is used in home page banner and in meta markup to represent the collection
+    # use either an objectid (from an item in this collect), a relative location of an image in this repo (ex. /assets/img/feature.jpg), or a full url to an image elsewhere
+    featured-image: wcc:313
+    # optional: add extra padding around collection title for a larger image feature.
+    home-title-y-padding: 10em # Default is 8em
+    # optional: change position of background image, center, top, bottom
+    home-banner-image-position: # Default is center
+
+Remember that our :code:`Map` feature was working, but not zooming in where we'd like.  We can fix that in :code:`theme.yml`.
+
+Let's change the :code:`latitude`, :code:`longitude` and :code:`zoom-level`.
+
+You can also modify your map-base.
+
+.. code:: yaml
+
+    ##########
+    # MAP PAGE
+    #
+    # see _data/map-config.csv for field display options
+    latitude: 35.49973 #to determine center of map
+    longitude: -83.62116 #to determine center of map
+    zoom-level: 4 # zoom level for map
+    map-base: Esri_NatGeoWorldMap # set default base map, choose from: Esri_WorldStreetMap, Esri_NatGeoWorldMap, Esri_WorldImagery
+    map-search: true # true/false, not suggested with large collections
+    map-search-fuzziness: 0.35 # fuzzy search range from 1 = anything to 0 = exact match only
+    map-cluster: true # true/false, suggested for large collection or with many items in same location
+    map-cluster-radius: 25 # size of clusters, from ~ 10 to 80
+
+.. image:: ../images/updated_map.png
+
+=================
+Timeline and Data
+=================
+
+Next let's correct a few more prescribed fields in our metadata to match what CollectionBuilder expects.
+
+1. Let's change :code:`local_identifier` to :code:`identifier` in our Google Sheet.
+2. Let's change :code:`abstract` to :code:`description` in our Google Sheet.
+3. Let's change :code:`date_created_d` to :code:`date` in our Google Sheet.
+4. Let's change :code:`rights_statement` to :code:`rightsstatement` in our Google Sheet.
+5. Let's change :code:`archival_collection` to :code:`source` in our Google Sheet.
+
+Now, we should see both the timeline and data pages working as expected.
+
+We should also see that our full results page looks much more robust.
+
+Note:  the timeling is designed to work with dates in the format :code:`YYYY-MM-DD` or :code:`YYYY-MM` or :code:`YYYY`.
+
+That being said, it wil only organize dates by year, so this isn't a great feature for our current collection.
