@@ -319,17 +319,17 @@ By default, CollectionBuilder builds the "Subjects" word cloud around what's in 
 If we look at our metadata, we have neither of these fields.  Instead, we have :code:`keyword` and :code:`utk_photographer`.  We also have a
 :code:`utk_donor` field.
 
-To get the subjects cloud working, lets rename "utk_photographer" to "creator" and "keyword" to "subject."
+To get the subjects cloud working, let's rename :code:`utk_photographer` to :code:`creator` and :code:`keyword` to :code:`subject`.
 
 Similarly, the "Locations" word cloud looks at the "location" field, but this information is currently stored in "spatial_local" in our sheet.
 
-Let's rename "spatial_local" to "location."
+Let's rename :code:`spatial_local` to :code:`location`.
 
 Finally, you may have noticed that all of our current data in the spreadsheet is delimited by a :code:` | ` but CollectionBuilder expects
 data to be delimited as :code:`; `.  Let's fix that in Google Sheets by doing a global find and replace by going to "Edit" and "Find and Replace"
 and clicking "Replace all."
 
-.. image:: find_and_replace.png
+.. image:: ../images/find_and_replace.png
 
 Now, let's download our CSV and re-upload it to our GitHub repository.
 
