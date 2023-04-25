@@ -158,3 +158,79 @@ These optional values will appear without any extra work:
 Editing Metadata
 ----------------
 
+Now that we know what fields we need, let's modify some existing messy metadata I've created to match these expectations.
+
+To do that, click `this link <https://docs.google.com/spreadsheets/d/12AtVzUzsQ4lv90634CZpZ7Ex_fLuZ1qG03FLCoyT6LY/edit#gid=1843475809>`_.
+Then, click `File > Make a Copy` to create your own editable copy of the metadata template.
+
+===================
+Add Required Fields
+===================
+
+First, let's make sure our metadata template has each of the required fields.
+
+1. Change :code:`source_identifier` to :code:`objectid`.  Remember, this is the unique identifier for each item in your collection.
+   In this existing data, this is the persistent identifier for the collection so it should be unique already. If you were
+   doing this with your own data, you'd need to do something to ensure this data was unique.
+2. Next, we need to make sure we have a column for our title which is a required field. **Column G** should contain our titles already.
+3. Next, we need to make sure we have a properly formatted format so that our works in this collection will all be displayed.
+   Remember, CollectionBuilder uses :code:`mime/type` to do this, but it may not be the actual mime type. Instead, it should
+   be a prescribed mime/type from CollectionBuilder (in this case :code:`image/jpeg`). Let's change column B to :code:`format`.
+   Then, let's change the values in column B to :code:`image/jpeg` for all of our images.
+4. Finally, we need to make sure our metadata matches the files we added to :code:`objects` a little bit ago. Those are all named
+   like the value in Column A but with the :code:`:` replaced with an :code:`_` and :code:`.jpg` added to the end. We can
+   add this easily with just a tiny bit of spreadsheet magic. Add a new column after column B. Then, in column C, add the following formula:
+   :code:`=CONCATENATE(SUBSTITUTE(A2, ":", "_"), ".jpg")`.  Now drag this to the bottom of our sheet.
+
+Now let's add this file to our project.  To do that, click :code:`File` then :code:`Download` then :code:`Comma-separated values (.csv, current sheet)`.
+
+Then, go back to your GitHub repository and upload the file to the :code:`_data` folder.  You can do this by clicking :code:`Add file` then :code:`Upload files`.
+
+
+========================================
+Editing Default Settings and YAML Basics
+========================================
+
+Now, we need to tell our CollectionBuilder site to use this file.  To do that, we need to edit the :code:`_config.yml`.
+
+Let's open that file and edit some settings.
+
+This file is formatted as YAML.  YAML is a human-readable data serialization language.  It's used by many projects for
+configuration files because it's human readable, easy to edit, and easy to parse.  You can learn more about YAML `here <https://en.wikipedia.org/wiki/YAML>`_.
+
+If a line starts with :code:`#`, that means it's a comment and will be ignored by the computer that interprets the command.
+
+Let's skip the optional URL Variables section for now and go straight to the Site Settings section.
+
+Here we can modify the title of our site, the tagline, the description, and the creator.
+
+Let's change the title to :code:`William Cox Cochran Photographic Collection`.  This will modify the title that appears
+throughout our site.
+
+Let's also change the tagline and description to :code:`Photographs of East Tennessee people and landmarks, mostly located in what is now the Great Smoky Mountains National Park`.
+
+Next, let's change the author to your GitHub name.
+
+Finally, let's switch the value of :code:`metadata` to the name of our csv without the extension, :code:`wcc_messy`.
+
+.. code:: yaml
+
+    ##########
+    # SITE SETTINGS
+    #
+    # title of site appears in banner
+    title: William Cox Cochran Photographic Collection
+    # tagline, a short phrase that will appear throughout the site in the top banner
+    tagline: photographs are of East Tennessee people and landmarks, mostly located in what is now the Great Smoky Mountains National Park
+    # description appears in meta tags and other locations
+    # this description might appear in search result lists, keep around 160 characters max
+    description: "photographs are of East Tennessee people and landmarks, mostly located in what is now the Great Smoky Mountains National Park"
+    # creator of the digital collection, to appear in meta tags; we typically use our GitHub usernames but feel free to just use your name
+    author: markpbaggett
+
+    ##########
+    # COLLECTION SETTINGS
+    #
+    # Set the metadata for your collection (the name of the csv file in your _data directory that describes the objects in your collection)
+    # Use the filename of your CSV **without** the ".csv" extension! E.g. _data/demo-metadata.csv --> "demo-metadata"
+    metadata: wcc_messy
