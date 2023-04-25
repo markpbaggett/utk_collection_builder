@@ -1,6 +1,9 @@
 Introduction to Collection Builder
 ==================================
 
+For this section, we will follow `external slides <https://docs.google.com/presentation/d/1583bUKxtm-GdsrN5VE4226tHX6oUodmRD7sq0fQ1gXI/edit#slide=id.g23a28f10be8_0_305>`_,
+but the contents and important bits can also be found below.
+
 What is CollectionBuilder?
 --------------------------
 
