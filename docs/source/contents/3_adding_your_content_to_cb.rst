@@ -301,8 +301,48 @@ If we look at the data page, we should see that the data is not working like we 
 
 .. image:: ../images/messy_data.png
 
+Cleaning Up Data to Improve Visualizations
+------------------------------------------
 
+Let's go back to our Google Sheet and modify it to make our visualizations work better.
 
+======================
+Correcting Word Clouds
+======================
 
+By default, CollectionBuilder builds the "Subjects" word cloud around what's in the :code:`subject` or :code:`creator` field.
 
+If we look at our metadata, we have neither of these fields.  Instead, we have :code:`keyword` and :code:`utk_photographer`.  We also have a
+:code:`utk_donor` field.
 
+To get the subjects cloud working, lets rename "utk_photographer" to "creator" and "keyword" to "subject."
+
+Similarly, the "Locations" word cloud looks at the "location" field, but this information is currently stored in "spatial_local" in our sheet.
+
+Let's rename "spatial_local" to "location."
+
+Finally, you may have noticed that all of our current data in the spreadsheet is delimited by a :code:` | ` but CollectionBuilder expects
+data to be delimited as :code:`; `.  Let's fix that in Google Sheets by doing a global find and replace by going to "Edit" and "Find and Replace"
+and clicking "Replace all."
+
+.. image:: find_and_replace.png
+
+Now, let's download our CSV and re-upload it to our GitHub repository.
+
+We should now see that both word clouds work as expected:
+
+.. image:: ../images/working_location_cloud.png
+
+Even though these work, let's pretend that we wanted to also include our donor field in the "Subjects" word cloud. We can
+do that by editing a yaml file in CollectionBuilder.
+
+Let's open :code:`_data/theme.yml` and add :code:`utk_donor` to our subjects cloud by editing line 26 to look like this:
+
+.. code:: yaml
+
+    ##########
+    # SUBJECTS PAGE
+    #
+    subjects-fields: subject;creator;utk_donor # set the field to be featured in the cloud (if left blank, none will be generated)
+    subjects-min: 1 # min size for subject cloud, too many terms = slow load time!
+    subjects-stopwords: # boxers;boxing;boxer # set of subjects separated by ;, e.g. boxers;boxing
