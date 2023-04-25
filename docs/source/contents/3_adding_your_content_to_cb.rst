@@ -221,10 +221,10 @@ Finally, let's switch the value of :code:`metadata` to the name of our csv witho
     # title of site appears in banner
     title: William Cox Cochran Photographic Collection
     # tagline, a short phrase that will appear throughout the site in the top banner
-    tagline: photographs are of East Tennessee people and landmarks, mostly located in what is now the Great Smoky Mountains National Park
+    tagline: photographs of East Tennessee people and landmarks, mostly located in what is now the Great Smoky Mountains National Park
     # description appears in meta tags and other locations
     # this description might appear in search result lists, keep around 160 characters max
-    description: "photographs are of East Tennessee people and landmarks, mostly located in what is now the Great Smoky Mountains National Park"
+    description: "photographs of East Tennessee people and landmarks, mostly located in what is now the Great Smoky Mountains National Park"
     # creator of the digital collection, to appear in meta tags; we typically use our GitHub usernames but feel free to just use your name
     author: markpbaggett
 
@@ -234,3 +234,75 @@ Finally, let's switch the value of :code:`metadata` to the name of our csv witho
     # Set the metadata for your collection (the name of the csv file in your _data directory that describes the objects in your collection)
     # Use the filename of your CSV **without** the ".csv" extension! E.g. _data/demo-metadata.csv --> "demo-metadata"
     metadata: wcc_messy
+
+
+Reviewing Our Data after Initial Changes
+----------------------------------------
+
+Now that we've made our initial changes, let's check our site to review what's working and what is not.
+
+========
+Homepage
+========
+
+From the home page, you should see:
+
+* that the title, tagline, and description have all changed.
+* the sample items slider has updated to have our new images
+* we have 90 objects
+* none of the other faceting seems to be working
+* the featured image isn't working
+
+.. image:: ../images/messy_front_page.png
+
+======
+Browse
+======
+
+On the browse page, we can see that our new images are appearing, but many of the metadata fields are not working on the brief results section.
+
+.. image:: ../images/messy_brief_results.png
+
+============
+Full Results
+============
+
+If we click on one of the items, we can see that the full results page is working, but our metadata is looking empty.
+
+.. image:: ../images/messy_full_results.png
+
+===========
+Word Clouds
+===========
+
+If we look at the "Subjects" and "Locations" word clouds, we should see that both are empty and not working as expected.
+
+.. image:: ../images/messy_word_clouds.png
+
+===
+Map
+===
+
+If we look at the map, we should see things appearing on it, but not zooming in where we'd like.
+
+========
+Timeline
+========
+
+If we look at the timeline, we should see that it's not working at all.
+
+.. image:: ../images/messy_timeline.png
+
+====
+Data
+====
+
+If we look at the data page, we should see that the data is not working like we want either.
+
+.. image:: ../images/messy_data.png
+
+
+
+
+
+
