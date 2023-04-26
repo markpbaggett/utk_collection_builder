@@ -286,7 +286,7 @@ Word Clouds
 
 If we look at the "Subjects" and "Locations" word clouds, we should see that both are empty and not working as expected.
 
-.. image:: ../images/messy_word_clouds.png
+.. image:: ../images/messy_word_cloud.png
 
 ===
 Map
