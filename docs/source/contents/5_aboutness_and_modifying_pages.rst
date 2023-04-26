@@ -10,33 +10,54 @@ Objectives:
 How Pages are Built in CollectionBuilder
 ----------------------------------------
 
-CollectionBuilder uses 4 main technologies to build pages.  Understanding how these work together will help you modify things to your liking.
+CollectionBuilder relies on 4 technologies along with its source code to build out collections and their associated pages:
+
+* `Jekyll <https://jekyllrb.com/>`_
+* `Liquid <https://shopify.github.io/liquid/>`_
+* `Bootstrap <https://getbootstrap.com/>`_
+* `Markdown <https://www.markdownguide.org/>`_
+
+Understanding how these work together will help you make modifications to the layout and functionality of your
+CollectionBuilder site.
 
 ====================
 Understanding Jekyll
 ====================
 
-CollectionBuilder uses Jekyll, Liquid, Bootstrap, and Markdown to build pages. Understanding how these work together will help you modify things to your liking.
+Jekyll is one of the most popular and actively developed static site generators, in part because of its direct
+integration with GitHub Pages. Originally focused on creating simple blogs from Markdown files, it has developed into a
+fully featured generator used on all types of web projects.
 
-Jekyll is one of the most popular and actively developed static site generators, in part because of its direct integration with GitHub Pages. Originally focused on creating simple blogs from Markdown files, it has developed into a fully featured generator used on all types of web projects.
+Jekyll is written in the programming language Ruby and is installed on your computer or a server as a Ruby Gem. However,
+you don’t need to know anything about Ruby to get started using it!
 
-Jekyll is written in the programming language Ruby and is installed on your computer as a Ruby Gem. However, you don’t need to know anything about Ruby to get started using it!
+The most important thing to understand about Jekyll is how a Jekyll project is laid out. In fact, some of this we've
+already used today.
 
-We're not going to do anything with Jekyll directly, but it's important to understand that the other components we touch will be using it.
+1. :code:`_config.yml`: This file contains the configuration options for your Jekyll site, including settings such as the site title, description, and base URL.
+2. :code:`_layouts`: This folder contains templates for the various types of pages on your site. For example, here you will find a layout for your homepage, your about page, and even components such as the word cloud.
+3. :code:`_includes`: This folder contains reusable pieces of HTML code that can be included in your layouts or pages. For example, you might have an include file for your header, footer, or navigation menu. We'll talk more about includes and layouts in just a minute.
+4. :code:`_sass`: This folder contains the Sass files for your site's stylesheets. If you're using Sass, you can organize your styles into separate files and use partials to import them into your main stylesheet.
+5. :code:`pages`: This folder contains the Markdown files for your pages. Each file in this folder will be converted into an HTML page on your site.
 
 ====================
 Understanding Liquid
 ====================
 
-Liquid is a flexible template language. In Jekyll it allows you to layout pages built from modular components and data, using the “_includes”, “_layouts”, and “_data” directories. Liquid includes features such as operators, loops, and filters to manipulate raw content. Liquid statements are enclosed by :code:`{% %}` and variables in :code:`{{ }}`.
+Liquid is a flexible template language. In Jekyll it allows you to layout pages built from modular components and data,
+using the “_includes”, “_layouts”, and “_data” directories. Liquid includes features such as operators, loops, and
+filters to manipulate raw content. Liquid statements are enclosed by :code:`{% %}` and variables in :code:`{{ }}`.
 
-We will use Liquid includes to modify the components on our pages.
+In just a few minutes, we will play around with some Liquid includes to modify the components we use on our pages.
 
 ======================
 Understanding Markdown
 ======================
 
-Markdown is a standard to simplify writing content for the web. Considered a “lightweight” markup language, it provides a set of conventions to create documents in plain text that can be converted into HTML. The basics are intuitive, modeled after how you might naturally write an email, and are intended to be easy to read for a human (compared to HTML source code!).
+Markdown is a standard to simplify writing content for the web. Considered a “lightweight” markup language, it provides
+a set of conventions to create documents in plain text that can be converted into HTML. The basics are intuitive,
+modeled after how you might naturally write an email, and are intended to be easy to read for a human
+(compared to HTML source code!).
 
 We will use Markdown to write the content of our pages and format it to some extent.
 
@@ -44,11 +65,18 @@ We will use Markdown to write the content of our pages and format it to some ext
 Understanding Bootstrap
 =======================
 
-CollectionBuilder uses Bootstrap to provide a responsive, mobile-first framework for building pages. Bootstrap is a package of CSS and JS that provides grid, layout, and UI components that can be used to quickly build and style a responsive website.
+CollectionBuilder uses Bootstrap to provide a responsive, mobile-first framework for building pages. Bootstrap is a
+package of CSS and JS that provides grid, layout, and UI components that can be used to quickly build and style a
+responsive website.
 
-Described as “the world’s most popular framework for building responsive, mobile-first sites”, Bootstrap is a package of CSS and JS that provides grid, layout, and UI components that can be used to quickly build and style a responsive website.
+Described as “the world’s most popular framework for building responsive, mobile-first sites”, Bootstrap is a package
+of CSS and JS that provides grid, layout, and UI components that can be used to quickly build and style a responsive
+website.
 
-CollectionBuilder currently uses version 5.1 as a base. This allows you to use Bootstrap columns, components, and utilities to customize your pages.
+CollectionBuilder currently uses version 5.1 as a base. This allows you to use Bootstrap columns, components, and
+utilities to customize your pages.
+
+Today, we will modify the layout of our home page using Bootstrap columns and components.
 
 =======================
 Includes versus Layouts
@@ -56,24 +84,36 @@ Includes versus Layouts
 
 In Jekyll, layouts and includes are two key concepts that allow you to define the structure and style of your website.
 
-Layouts are templates that define the overall structure and design of your website, including headers, footers, sidebars, and content areas. They are typically written in HTML and can include liquid tags to dynamically generate content. When you create a new page or post in Jekyll, you can specify which layout to use for that content.
+Layouts are templates that define the overall structure and design of your website, including headers, footers,
+sidebars, and content areas. They are typically written in HTML and can include liquid tags (includes) to dynamically
+generate content. When you create a new page or post in Jekyll, you can specify which layout to use for that content.
 
-Includes, on the other hand, are reusable code snippets that can be included in your layouts or pages. They can contain things like navigation menus, social media icons, or other elements that appear on multiple pages of your website. Like layouts, includes can also be written in HTML and can contain liquid tags to dynamically generate content.
+Includes, on the other hand, are reusable code snippets that can be included in your layouts or pages. They can contain
+things like navigation menus, headers, footers, or other elements that appear on multiple pages of your website. Like
+layouts, includes can also be written in HTML and can contain liquid tags to dynamically generate content.
 
-In general, layouts are used to define the overall structure and design of your website, while includes are used to insert reusable code snippets into your layouts and pages.
+In general, layouts are used to define the overall structure and design of your website, while includes are used to
+insert reusable code snippets into your layouts and pages.
 
-To understand the difference between layouts and includes in a Jekyll project, it's helpful to think of layouts as the "skeleton" of your website, while includes are the "organs" that make up the different parts of your website. By using layouts and includes effectively, you can create a consistent and well-organized website that is easy to maintain and update.
+To understand the difference between layouts and includes in a Jekyll project, it's helpful to think of layouts as the
+"skeleton" of your website, while includes are the "organs" that make up the different parts of your website.
 
 Modifying the Layout of the Home Page
 -------------------------------------
+
+So let's get started with some customizations and use some of the things I just mentioned.
+
+Let's look at our home page.
 
 Since our data doesn't work well with the default layout, we're going to modify the home page to look a little better and
 we're going to use all the things I just mentioned to do it.
 
 First, let's look at :code:`/_layouts/home-infographic.html`. This is the layout that is used for the home page.
 
-Let's modify it so that our Featured Items span the entire width of our display. Then, we'll divide the display into 4
-sections and put description, locations, top subjects, and objects in each section removing the Timeline.
+Let's modify it so that our Featured Items span the entire width of our display.
+
+Then, we'll divide the display into 4 columns and put description, locations, top subjects, and objects in each column
+removing the Timeline.
 
 To do this, let's modify the carousel include to span the entire width of the display.
 
@@ -159,8 +199,6 @@ add interesting and engaging contextual information.
 
 Each “include” file has several options, which are documented in the files themselves.
 
-Today we're going to use a few of these but let's look at how they are structured first.
-
 
 Modifying the Banner
 --------------------
@@ -170,7 +208,8 @@ Let's use Liquid to modify the banner on the About page.
 The banner is a Bootstrap jumbotron, and can be modified in the `_includes/feature/banner.html` file. Instead of modifying
 the functionality, we're going to simply update the image that is being used.
 
-To do that, we're going to update the include like so to point at a region of one of the images in our colleciton from the Libraries' IIIF server:
+To do that, we're going to update the include like so to point at a region of one of the images in our collection from
+the Libraries' IIIF server:
 
 .. code:: markdown
 
@@ -197,3 +236,17 @@ Next, let's add some information about the collection beneath the banner.
     Oberlin College has a collection of Cochran Family Papers that contains other photographs taken by William C. Cochran.
 
 Beneath the second paragraph, let's add a new section that will include a Bootstrap card with a title, image, and text.
+
+.. code:: jekyll
+
+    {% include feature/card.html header="Distant view of Chilhowee R. from Melrose" text="Photograph taken by William Cox Cochran on Aug 13, 1886." objectid="wcc:299" width="25" centered=true %}
+
+After the next paragraph, let's add two more cards card with a title, image, and text for the two images of the University of
+Tennessee.
+
+.. code:: jekyll
+
+    {% include feature/card.html header="University of E. Tennessee - Knoxville" text="Photograph taken by William Cox Cochran on Sep 1, 1886." objectid="wcc:356" width="25" centered=true %}
+    {% include feature/card.html header="University of E. Tennessee - Knoxville" text="Photograph taken by William Cox Cochran on Sep 1, 1886." objectid="wcc:356" width="25" centered=true %}
+
+While we can see things getting to the web, using what we've learned today, how might we improve this?
