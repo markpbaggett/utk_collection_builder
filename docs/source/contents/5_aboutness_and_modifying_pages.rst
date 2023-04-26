@@ -98,6 +98,100 @@ insert reusable code snippets into your layouts and pages.
 To understand the difference between layouts and includes in a Jekyll project, it's helpful to think of layouts as the
 "skeleton" of your website, while includes are the "organs" that make up the different parts of your website.
 
+Adding About-ness
+-----------------
+
+Perhaps the most important thing you'll want to do for your collection is to modify the "About" page and add your own
+information and features.
+
+CollectionBuilder comes with a customizable “About” page layout designed for long form content with rich media embeds.
+Content is written in Markdown and enhanced using “includes” that pull in collection content, external media, and
+Bootstrap features like cards and modals. This makes it easier for site builders to develop their collection and
+add interesting and engaging contextual information.
+
+Each “include” file has several options, which are documented in the files themselves.
+
+Before we get started, let's take a quick look at the **Card** Feature at :code:`_includes/feature/card.html`:
+
+.. code:: jekyll
+
+    {% comment %}
+
+        Bootstrap Card, https://getbootstrap.com/docs/5.1/components/card/
+
+        E.G. --> {% include feature/card.html text="Some text" header="Example item" objectid="demo_004" %}
+
+        Options:
+        - "text" = main card text, can use markdown formatting (tip: use a Liquid capture to add more complex content)
+        - "header" = card header text (in bar above card content)
+        - "title" = card title text inside card content area
+        - "objectid" = the given object or link to external image will create a card cap image
+        - "alt" = if adding an external image using objectid option, provide alt text for image
+        - "width" = will use responsive sizing to set the % size on desktop (will be 100% on mobile), choose from "25", "50", "75", or "100"
+        - "centered" = give "true" to add mx-auto class on the card to center it
+
+    {%- endcomment -%}
+
+Modifying the Banner
+--------------------
+
+Let's use Liquid to modify the banner on the About page.
+
+The banner is a Bootstrap jumbotron, and can be modified in the `_includes/feature/banner.html` file. Instead of modifying
+the functionality, we're going to simply update the image that is being used.
+
+To do that, we're going to update the include like so to point at a region of one of the images in our collection from
+the Libraries' IIIF server:
+
+.. code:: markdown
+
+    {% include feature/jumbotron.html objectid="https://digital.lib.utk.edu/iiif/2/collections~islandora~object~wcc%3A268~datastream~JP2/60,1965,5275,1326/full/0/default.jpg" %}
+
+Now our banner should look like so:
+
+.. image:: ../images/about-banner.png
+    :alt: About page banner
+
+Adding an About Section
+-----------------------
+
+Next, let's add some information about the collection beneath the banner.
+
+.. code:: text
+
+    William Cox Cochran (1848-1936) was an Ohio lawyer, scholar, and trustee of Oberlin College. He served in the Department of the Interior in Washington under his stepfather, Jacob C. Cox. In 1872, after a European tour, Cochran studied law and opened a law office in Cincinnati. Later, he served as clerk of the U.S. Circuit Court of Appeals in Cincinnati. He died at the age of 88.
+
+    William Cox Cochran captured these 89 images of East Tennessee during August 12 thru 30, 1886. The photographs are of East Tennessee people and landmarks, mostly located in what is now the Great Smoky Mountains National Park. There are many photographs of Chilhowee Range, Nebo Mountain, and Miller's Cove.
+
+    The collection includes two photographs of the University of Tennessee-Knoxville. The photographic images in the collection were donated by Miss Mary Rudd Cochran, daughter of W.C. Cochran to the University of Tennessee Libraries in 1959. Click here for the Finding Aid.
+
+    Oberlin College has a collection of Cochran Family Papers that contains other photographs taken by William C. Cochran.
+
+Let's use Markdown to make a link to the Oberlin College Collection and make the first occurrence of "William Cox Cochran" bold.
+
+.. code:: markdown
+
+    [Oberlin College has a collection of Cochran Family Papers](http://oberlinarchives.libraryhost.com/?p=collections/controlcard&id=16) that contains other photographs taken by **William Cox Cochran**.
+
+.. unicode:: markdown
+
+    **William Cox Cochran (1848-1936)** was an Ohio lawyer, scholar, and trustee of Oberlin College. He served in the Department of the Interior in Washington under his stepfather, Jacob C. Cox. In 1872, after a European tour, Cochran studied law and opened a law office in Cincinnati. Later, he served as clerk of the U.S. Circuit Court of Appeals in Cincinnati. He died at the age of 88.
+
+Beneath the second paragraph, we can use Bootstrap cards or the image feature to add sample images that go with this section.
+
+Let's add a new section that will include a Bootstrap card with a title, image, and text.
+
+.. code:: jekyll
+
+    {% include feature/card.html header="Distant view of Chilhowee R. from Melrose" text="Photograph taken by William Cox Cochran on Aug 13, 1886." objectid="wcc:299" width="25" centered=true %}
+
+After the next paragraph, let's add an include that brings in the two images of the University of
+Tennessee.
+
+.. code:: jekyll
+
+    {% include feature/image.html objectid="wcc:356;wcc:269" width="50" %}
+
 Modifying the Layout of the Home Page
 -------------------------------------
 
@@ -184,73 +278,3 @@ Now, when we navigate to our site, we should see a new timeline feature that lev
 
 .. image:: ../images/new_timeline.png
    :width: 100%
-
-
-Adding About-ness
------------------
-
-Perhaps the most important thing you'll want to do for your collection is to modify the "About" page and add your own
-information and features.
-
-CollectionBuilder comes with a customizable “About” page layout designed for long form content with rich media embeds.
-Content is written in Markdown and enhanced using “includes” that pull in collection content, external media, and
-Bootstrap features like cards and modals. This makes it easier for site builders to develop their collection and
-add interesting and engaging contextual information.
-
-Each “include” file has several options, which are documented in the files themselves.
-
-
-Modifying the Banner
---------------------
-
-Let's use Liquid to modify the banner on the About page.
-
-The banner is a Bootstrap jumbotron, and can be modified in the `_includes/feature/banner.html` file. Instead of modifying
-the functionality, we're going to simply update the image that is being used.
-
-To do that, we're going to update the include like so to point at a region of one of the images in our collection from
-the Libraries' IIIF server:
-
-.. code:: markdown
-
-    {% include feature/jumbotron.html objectid="https://digital.lib.utk.edu/iiif/2/collections~islandora~object~wcc%3A268~datastream~JP2/60,1965,5275,1326/full/0/default.jpg" %}
-
-Now our banner should look like so:
-
-.. image:: ../images/about-banner.png
-    :alt: About page banner
-
-Adding an About Section
------------------------
-
-Next, let's add some information about the collection beneath the banner.
-
-.. code:: text
-
-    William Cox Cochran (1848-1936) was an Ohio lawyer, scholar, and trustee of Oberlin College. He served in the Department of the Interior in Washington under his stepfather, Jacob C. Cox. In 1872, after a European tour, Cochran studied law and opened a law office in Cincinnati. Later, he served as clerk of the U.S. Circuit Court of Appeals in Cincinnati. He died at the age of 88.
-
-    William Cox Cochran captured these 89 images of East Tennessee during August 12 thru 30, 1886. The photographs are of East Tennessee people and landmarks, mostly located in what is now the Great Smoky Mountains National Park. There are many photographs of Chilhowee Range, Nebo Mountain, and Miller's Cove.
-
-    The collection includes two photographs of the University of Tennessee-Knoxville. The photographic images in the collection were donated by Miss Mary Rudd Cochran, daughter of W.C. Cochran to the University of Tennessee Libraries in 1959. Click here for the Finding Aid.
-
-    Oberlin College has a collection of Cochran Family Papers that contains other photographs taken by William C. Cochran.
-
-Beneath the second paragraph, we can use Bootstrap cards or the image feature to add sample images that go with this section.
-
-Let's add a new section that will include a Bootstrap card with a title, image, and text.
-
-.. code:: jekyll
-
-    {% include feature/card.html header="Distant view of Chilhowee R. from Melrose" text="Photograph taken by William Cox Cochran on Aug 13, 1886." objectid="wcc:299" width="25" centered=true %}
-
-After the next paragraph, let's add two more cards card with a title, image, and text for the two images of the University of
-Tennessee.
-
-.. code:: jekyll
-
-    {% include feature/card.html header="University of E. Tennessee - Knoxville" text="Photograph taken by William Cox Cochran on Sep 1, 1886." objectid="wcc:356" width="25" centered=true %}
-    {% include feature/card.html header="University of E. Tennessee - Knoxville" text="Photograph taken by William Cox Cochran on Sep 1, 1886." objectid="wcc:356" width="25" centered=true %}
-
-We could also use the image feature to add these images, but we'll leave that as an exercise for the reader.
-
-While we can see things getting to the web, using what we've learned today, how might we improve this?
