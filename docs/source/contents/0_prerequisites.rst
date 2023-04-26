@@ -28,4 +28,4 @@ Outline of Today's Workshop
 * Adding Initial Content (1:25 - 1:35)
 * Modifying Content (1:35 - 1:55)
 * Customizing Components and Adding Aboutness (1:55 - 2:15)
-* Questions / Wrapup (2:15 - 2:30)
+* Questions / Wrapup / Experimentation (2:15 - 2:30)
