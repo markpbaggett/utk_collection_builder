@@ -167,6 +167,10 @@ Now that we know what fields we need, let's modify some existing messy metadata 
 To do that, click `this link <https://docs.google.com/spreadsheets/d/12AtVzUzsQ4lv90634CZpZ7Ex_fLuZ1qG03FLCoyT6LY/edit#gid=1843475809>`_.
 Then, click `File > Make a Copy` to create your own editable copy of the metadata template.
 
+.. image:: ../images/wcc_messy.png
+   :width: 500px
+   :alt: Screenshot of our Messy CSV
+
 ===================
 Add Required Fields
 ===================
@@ -263,7 +267,8 @@ From the home page, you should see:
 Browse
 ======
 
-On the browse page, we can see that our new images are appearing, but many of the metadata fields are not working on the brief results section.
+On the browse page, we can see that our new images are appearing, but many of the metadata fields are not working in the
+brief results section.
 
 .. image:: ../images/messy_brief_results.png
 
@@ -415,6 +420,9 @@ Now, we should see both the timeline and data pages working as expected.
 
 We should also see that our full results page looks much more robust.
 
-Note:  the timeling is designed to work with dates in the format :code:`YYYY-MM-DD` or :code:`YYYY-MM` or :code:`YYYY`.
+Note:  the timeline is designed to work with dates in the format :code:`YYYY-MM-DD` or :code:`YYYY-MM` or :code:`YYYY`.
 
 That being said, it wil only organize dates by year, so this isn't a great feature for our current collection.
+
+In the next two sections, we will remove the out-of-the-box timeline from our collection and replace it with another
+chronological visualization that works better with our content.
