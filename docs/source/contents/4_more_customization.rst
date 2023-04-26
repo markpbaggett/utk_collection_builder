@@ -12,7 +12,7 @@ Adding Missing Metadata Fields
 If you want to add a new metadata field to the list of fields that are not prescribed by CollectionBuilder, that's easy
 to do.
 
-To see this in action, let's get metadata from our spreadsheet that isn't currently working to display on the item page.
+To see this in action, let's get metadata from our spreadsheet that isn't currently displaying on the item page.
 
 Currently, these fields are not being displayed on the item page:
 
@@ -26,16 +26,16 @@ Let's add them to the item page by modifying :code:`_data/config-metadata.csv`.
 In this file, we can set the initial field name, the display name, whether we want it to be a browse field, and whether
 it should be an external link. We can also set the order in which the fields should appear on the item page.
 
-The field name is the field where that data is stored in our spread sheet.
+The **field name** is the field where that data is stored in our original spread sheet.
 
-The display name is the descriptive string we want to associate with that field.
+The **display name** is the descriptive string we want to associate with that field when it's displayed.
 
-The browse field option is used to determine whether or not we want to link this field to a search on the browse page.
+The **browse field** option is used to determine whether or not we want to link this field to a search on the browse page.
 
 Finally, the external link option is used to link external resources to the item page.
 
 To begin, let's add :code:`utk_donor` to the list of fields in :code:`_data/config-metadata.csv` and make it searchable
-underneather :code:`Creator`.  Let's also make the :code:`Creator` field searchable:
+beneath :code:`Creator`.  Let's also make the :code:`Creator` field searchable:
 
 .. code-block:: csv
 
@@ -49,7 +49,7 @@ Now, let's test our change.
 .. image:: ../images/customizing_display.png
 
 Notice that both :code:`Creator` and :code:`Donor` are now searchable on the browse page, but
-only ::code:`Creator` returns results.  This is because we have to add :code:`Donor`to our search index.
+only ::code:`Creator` returns results.  This is because we need to add :code:`Donor`to our search index.
 
 To do this, we need to add :code:`utk_donor` to the list of fields in :code:`_data/config-browse.csv`:
 
