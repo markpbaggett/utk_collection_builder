@@ -235,7 +235,9 @@ Next, let's add some information about the collection beneath the banner.
 
     Oberlin College has a collection of Cochran Family Papers that contains other photographs taken by William C. Cochran.
 
-Beneath the second paragraph, let's add a new section that will include a Bootstrap card with a title, image, and text.
+Beneath the second paragraph, we can use Bootstrap cards or the image feature to add sample images that go with this section.
+
+Let's add a new section that will include a Bootstrap card with a title, image, and text.
 
 .. code:: jekyll
 
@@ -248,5 +250,7 @@ Tennessee.
 
     {% include feature/card.html header="University of E. Tennessee - Knoxville" text="Photograph taken by William Cox Cochran on Sep 1, 1886." objectid="wcc:356" width="25" centered=true %}
     {% include feature/card.html header="University of E. Tennessee - Knoxville" text="Photograph taken by William Cox Cochran on Sep 1, 1886." objectid="wcc:356" width="25" centered=true %}
+
+We could also use the image feature to add these images, but we'll leave that as an exercise for the reader.
 
 While we can see things getting to the web, using what we've learned today, how might we improve this?
